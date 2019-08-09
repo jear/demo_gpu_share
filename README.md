@@ -1,4 +1,4 @@
-k8s cluster node5 has 1 GPU with 8GiB of RAM 
+### k8s cluster node5 has 1 GPU with 8GiB of RAM 
 ------------------------------------------
 
     [root@node1 ~]# k get nodes
