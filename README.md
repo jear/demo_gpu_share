@@ -22,7 +22,7 @@
     Allocated/Total GPU Memory In Cluster:  0/7 (0%)
 
 
-### Let's create 2 tf-jupyter deployments with 3GiB of GPU RAM 
+### Let's create 2 tf-jupyter deployments with each  3GiB of GPU RAM 
 ----------------------------------------------------------
 
     [root@node1 gpu-test]# kubectl create -f tf-jupyter-share.yml
