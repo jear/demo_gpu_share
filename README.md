@@ -107,8 +107,6 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
 
 
 ## Run  Jupyter Notebooks
-
-## Prepare in both notebook  menus  "Kernel / Retart & Run All"
-
-## Clic both run button
+### Prepare in both notebook  menus  "Kernel / Retart & Run All"
+### Clic both run button
 
