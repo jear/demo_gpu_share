@@ -6,11 +6,10 @@ The Nvidia GPU sharing device plugin for Kubernetes is a Daemonset that allows y
 
 For more info, please refer [gpusharing scheduler extender](https://github.com/AliyunContainerService/gpushare-scheduler-extender)
 
-
 ------------------------------------------
 
-### k8s cluster node5 has 1 GPU0 with 8GiB of RAM 
-------------------------------------------
+## k8s cluster node5 has 1 GPU0 with 8GiB of RAM 
+
 
     [root@node1 ~]# k get nodes
     NAME    STATUS   ROLES         AGE   VERSION
@@ -33,8 +32,7 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
     Allocated/Total GPU Memory In Cluster:  0/7 (0%)
 
 
-### Let's create 2 tf-jupyter deployments with each  3GiB of GPU0 RAM 
-----------------------------------------------------------
+## Let's create 2 tf-jupyter deployments with each  3GiB of GPU0 RAM 
 
     [root@node1 gpu-test]# kubectl create -f tf-jupyter-share.yml
     deployment.extensions/tf-jupyter created
@@ -44,8 +42,7 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
     deployment.extensions/tf-jupyter2 created
     service/tf-jupyter-service2 created
 
-### Let's check GPU0 RAM fraction allocation for each pod 
-----------------------------------------------------------
+## Let's check GPU0 RAM fraction allocation for each pod 
 
     [root@node1 gpu-test]#  kubectl inspect gpushare -d
 
@@ -62,8 +59,8 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
 
     Allocated/Total GPU Memory In Cluster:  6/7 (85%)
 
-###
-### Get jupyter notebook IP:PORT and  token
+
+## Get jupyter notebook IP:PORT and  token
 
     [root@node1 gpu-test]# k get pod
     NAME                           READY   STATUS    RESTARTS   AGE
@@ -72,7 +69,7 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
     tf-jupyter2-69b6f97566-j4f4w   1/1     Running   0          55s
 
 
-        [root@node1 gpu-test]# k get svc
+    [root@node1 gpu-test]# k get svc
     NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)          AGE
     kubernetes            ClusterIP      10.233.0.1      <none>           443/TCP          20d
     minio-service         LoadBalancer   10.233.39.183   10.202.115.190   9000:31468/TCP   20d
@@ -89,13 +86,13 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
     Currently running servers:
     http://0.0.0.0:8888/?token=31a0dc813da97c4ae2ce3d1b9967b7e0fce1a86d4ee639dd :: /notebooks
 
-###  Open both notebook
+## Browse both notebooks ( 3_mnist_from_scratch.ipynb )
     http://10.202.115.191:8888/?token=d90df992165c679047c52009d47f9b0cb027d84dbcf1ceb2
 
     http://10.202.115.192:8888/?token=31a0dc813da97c4ae2ce3d1b9967b7e0fce1a86d4ee639dd
 
 
-###   Edit both notebooks ( 3_mnist_from_scratch.ipynb ) 
+## Edit both notebooks ( 3_mnist_from_scratch.ipynb ) 
 
 
     Entry[15] :
@@ -109,9 +106,9 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
     s = tf.InteractiveSession(config=config)
 
 
-###     Run  Jupyter Notebooks
+## Run  Jupyter Notebooks
 
-###  Prepare in both notebook  menus  "Kernel / Retart & Run All"
+## Prepare in both notebook  menus  "Kernel / Retart & Run All"
 
-### Clic both run button
+## Clic both run button
 
