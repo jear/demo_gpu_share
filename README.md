@@ -1,3 +1,5 @@
+https://github.com/AliyunContainerService/gpushare-scheduler-extender
+
 ### k8s cluster node5 has 1 GPU0 with 8GiB of RAM 
 ------------------------------------------
 
