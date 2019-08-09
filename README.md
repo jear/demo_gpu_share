@@ -22,7 +22,7 @@
     Allocated/Total GPU Memory In Cluster:  0/7 (0%)
 
 
-Let's create 2 tf-jupyter deployments with 3GiB of GPU RAM 
+### Let's create 2 tf-jupyter deployments with 3GiB of GPU RAM 
 ----------------------------------------------------------
 
     [root@node1 gpu-test]# kubectl create -f tf-jupyter-share.yml
@@ -33,7 +33,7 @@ Let's create 2 tf-jupyter deployments with 3GiB of GPU RAM
     deployment.extensions/tf-jupyter2 created
     service/tf-jupyter-service2 created
 
-Let's check GPU RAM fraction allocation for each pod 
+### Let's check GPU RAM fraction allocation for each pod 
 ----------------------------------------------------------
 
     [root@node1 gpu-test]#  kubectl inspect gpushare -d
@@ -52,7 +52,7 @@ Let's check GPU RAM fraction allocation for each pod
     Allocated/Total GPU Memory In Cluster:  6/7 (85%)
 
 ###
-# Get jupyter notebook IP:PORT and  token
+### Get jupyter notebook IP:PORT and  token
 
     [root@node1 gpu-test]# k get pod
     NAME                           READY   STATUS    RESTARTS   AGE
@@ -78,14 +78,14 @@ Let's check GPU RAM fraction allocation for each pod
     Currently running servers:
     http://0.0.0.0:8888/?token=31a0dc813da97c4ae2ce3d1b9967b7e0fce1a86d4ee639dd :: /notebooks
 
-# Open both notebook
+###  Open both notebook
     http://10.202.115.191:8888/?token=d90df992165c679047c52009d47f9b0cb027d84dbcf1ceb2
 
     http://10.202.115.192:8888/?token=31a0dc813da97c4ae2ce3d1b9967b7e0fce1a86d4ee639dd
 
 
-#  Edit both notebook ( 3_mnist_from_scratch.ipynb ) 
-###########################    Edit  Jupyter Notebooks
+###   Edit both notebooks ( 3_mnist_from_scratch.ipynb ) 
+
 
     Entry[15] :
     # Give a fraction of GPU memory to Tensorflow
@@ -98,9 +98,9 @@ Let's check GPU RAM fraction allocation for each pod
     s = tf.InteractiveSession(config=config)
 
 
-###########################    Run  Jupyter Notebooks
+###     Run  Jupyter Notebooks
 
-#  Prepare in both notebook  menus  "Kernel / Retart & Run All"
+###  Prepare in both notebook  menus  "Kernel / Retart & Run All"
 
-# Clic both run button
+### Clic both run button
 
