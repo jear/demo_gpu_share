@@ -1,3 +1,6 @@
+k8s cluster node5 has 1 GPU with 8GiB of RAM 
+------------------------------------------
+
     [root@node1 ~]# k get nodes
     NAME    STATUS   ROLES         AGE   VERSION
     node1   Ready    master,node   20d   v1.13.5
@@ -19,6 +22,8 @@
     Allocated/Total GPU Memory In Cluster:  0/7 (0%)
 
 
+Let's create 2 tf-jupyter deployments with 3GiB of GPU RAM 
+----------------------------------------------------------
 
     [root@node1 gpu-test]# kubectl create -f tf-jupyter-share.yml
     deployment.extensions/tf-jupyter created
@@ -28,8 +33,8 @@
     deployment.extensions/tf-jupyter2 created
     service/tf-jupyter-service2 created
 
-
-
+Let's check GPU RAM fraction allocation for each pod 
+----------------------------------------------------------
 
     [root@node1 gpu-test]#  kubectl inspect gpushare -d
 
@@ -46,7 +51,7 @@
 
     Allocated/Total GPU Memory In Cluster:  6/7 (85%)
 
-####################################
+###
 # Get jupyter notebook IP:PORT and  token
 
     [root@node1 gpu-test]# k get pod
