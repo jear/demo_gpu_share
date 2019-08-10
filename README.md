@@ -8,6 +8,8 @@ For more info, please refer [gpusharing scheduler extender](https://github.com/A
 
 ------------------------------------------
 
+Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOseaanIu0TQJJmrwfjtg/view?usp=sharing)
+
 ## k8s cluster node5 has 1 GPU0 with 8GiB of RAM 
 
 
