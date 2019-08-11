@@ -1,14 +1,17 @@
-## About
+## Demo of 2 Jupyter notebooks running at the same time Tensorflow training on a single GPU in a Kubernetes cluster 
+Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOseaanIu0TQJJmrwfjtg/view?usp=sharing)
+
+
+## Prerequisite
 
 The Nvidia GPU sharing device plugin for Kubernetes is a Daemonset that allows you to automatically:
 - Expose the GPU Memory and GPU count on the node of your cluster
 - Run GPU sharing enabled containers in your Kubernetes cluster.
 
-For more info, please refer [gpusharing scheduler extender](https://github.com/AliyunContainerService/gpushare-scheduler-extender)
+For installation, refer to [gpusharing scheduler extender](https://github.com/AliyunContainerService/gpushare-scheduler-extender)
 
 ------------------------------------------
 
-Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOseaanIu0TQJJmrwfjtg/view?usp=sharing)
 
 ## k8s cluster node5 has 1 GPU0 with 8GiB of RAM 
 
