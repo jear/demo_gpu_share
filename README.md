@@ -1,9 +1,5 @@
 ## Demo of 2 Jupyter notebooks running at the same time Tensorflow training on a single GPU in a Kubernetes cluster 
-Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOseaanIu0TQJJmrwfjtg/view?usp=sharing)
-Small video [demo gpu sharing](https://youtu.be/uG4Nd2StFhY)
-
-
-[![](demo.jpg)](https://youtu.be/uG4Nd2StFhY)
+Small video [![](demo.jpg)](https://youtu.be/uG4Nd2StFhY)
 
 
 
