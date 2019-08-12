@@ -99,11 +99,15 @@ For installation, refer to [gpusharing scheduler extender](https://github.com/Al
 
 
 ## Edit both notebooks ( 3_mnist_from_scratch.ipynb ) 
-
-
     Entry[15] :
+    my_GPU_MEM = float(os.environ['ALIYUN_COM_GPU_MEM_DEV'])
+    my_GPU_MEM_POD = float(os.environ['ALIYUN_COM_GPU_MEM_POD'])
+
+    print ( 'GPU memory     : ', my_GPU_MEM )
+    print ( 'POD GPU memory : ', my_GPU_MEM_POD )
+
     # Give a fraction of GPU memory to Tensorflow
-    fraction = round( 3 * 0.7 / 7 , 1 )
+    fraction = round( my_GPU_MEM_POD * 0.7 / my_GPU_MEM , 1 )
     config = tf.ConfigProto()
     config.gpu_options.per_process_gpu_memory_fraction = fraction
 
