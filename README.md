@@ -2,6 +2,11 @@
 Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOseaanIu0TQJJmrwfjtg/view?usp=sharing)
 Small video [demo gpu sharing](https://youtu.be/uG4Nd2StFhY)
 
+
+[![](demo1.jpg)](https://youtu.be/uG4Nd2StFhY)
+
+
+
 ## Prerequisite
 
 The Nvidia GPU sharing device plugin for Kubernetes is a Daemonset that allows you to automatically:
