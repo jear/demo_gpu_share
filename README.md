@@ -3,7 +3,7 @@ Small video [demo gpu sharing](https://drive.google.com/file/d/1N4mnLHY0aKHEOsea
 Small video [demo gpu sharing](https://youtu.be/uG4Nd2StFhY)
 
 
-[![](demo1.jpg)](https://youtu.be/uG4Nd2StFhY)
+[![](demo.jpg)](https://youtu.be/uG4Nd2StFhY)
 
 
 
