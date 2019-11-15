@@ -27,7 +27,7 @@ spec:
         resources:
           limits:
             # GiB
-            aliyun.com/gpu-mem: 3
+            aliyun.com/gpu-mem: 4100
         volumeMounts:
         - mountPath: /usr/local/nvidia/bin
           name: bin

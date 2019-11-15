@@ -26,6 +26,24 @@ k create -f device-plugin-ds.yaml
 
 
 
+[root@k8s-prod-controller-0 demo_gpu_share]# k get pod
+NAME                          READY   STATUS    RESTARTS   AGE
+hub-7658c965b7-8rzz6          1/1     Running   0          4d
+proxy-6f5bb7c7f7-ntxcl        1/1     Running   0          4d16h
+tf-jupyter-64b869c6f6-pdcdj   1/1     Running   0          11m
+tf-jupyter2-9464b4cb4-brpjf   1/1     Running   0          3s
+[root@k8s-prod-controller-0 demo_gpu_share]#  kubectl inspect gpushare -d
+
+NAME:       node-2gpu
+IPADDRESS:  10.202.115.157
+
+NAME                         NAMESPACE   GPU0(Allocated)  GPU1(Allocated)
+tf-jupyter-64b869c6f6-pdcdj  jhub        4064             0
+tf-jupyter2-9464b4cb4-brpjf  jhub        0                4100
+Allocated :                  8164 (50%)
+Total :                      16258
+--------------------------------------------------------------------------------------------
+
 
 
 
