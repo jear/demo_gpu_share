@@ -26,8 +26,8 @@ spec:
         - containerPort: 8888
         resources:
           limits:
-            # GiB
-            aliyun.com/gpu-mem: 3
+            # MiB
+            aliyun.com/gpu-mem: 4064
         volumeMounts:
         - mountPath: /usr/local/nvidia/bin
           name: bin

@@ -1,0 +1,34 @@
+
+k delete -f device-plugin-ds.yaml
+k delete -f device-plugin-rbac.yaml
+k delete -f gpushare-schd-extender.yaml
+
+\cp scheduler-policy-config.json /etc/kubernetes/scheduler-policy-config.json
+scp scheduler-policy-config.json k8s-prod-controller-1:/etc/kubernetes/scheduler-policy-config.json
+scp scheduler-policy-config.json k8s-prod-controller-2:/etc/kubernetes/scheduler-policy-config.json
+
+k create -f gpushare-schd-extender.yaml
+
+\cp kube-scheduler.yaml.jear /etc/kubernetes/manifests/kube-scheduler.yaml
+scp kube-scheduler.yaml.jear k8s-prod-controller-1:/etc/kubernetes/manifests/kube-scheduler.yaml
+scp kube-scheduler.yaml.jear k8s-prod-controller-2:/etc/kubernetes/manifests/kube-scheduler.yaml
+
+k delete pod -n kube-system         kube-scheduler-k8s-prod-controller-0
+k delete pod -n kube-system         kube-scheduler-k8s-prod-controller-1
+k delete pod -n kube-system         kube-scheduler-k8s-prod-controller-2
+
+
+k get pod --all-namespaces | grep sch
+
+
+k create -f device-plugin-rbac.yaml
+k create -f device-plugin-ds.yaml
+
+
+
+
+
+
+
+
+
