@@ -49,4 +49,26 @@ Total :                      16258
 
 
 
+[root@k8s-prod-controller-0 gpu-test]# k get pod
+NAME                           READY   STATUS    RESTARTS   AGE
+hub-7658c965b7-8rzz6           1/1     Running   0          5d3h
+proxy-6f5bb7c7f7-ntxcl         1/1     Running   0          5d18h
+tf-jupyter1-6ffc79668b-lr6kv   1/1     Running   0          2m12s
+tf-jupyter2-d7b4dc954-tn2bc    1/1     Running   0          98s
+tf-jupyter3-747595bb8b-cdc4m   1/1     Running   0          58s
+tf-jupyter4-6cdfdf888b-tf8wr   1/1     Running   0          3s
+[root@k8s-prod-controller-0 gpu-test]# k inspect gpushare -d
+
+NAME:       node-2gpu
+IPADDRESS:  10.202.115.157
+
+NAME                          NAMESPACE    GPU0(Allocated)  GPU1(Allocated)
+tf-jupyter1-6ffc79668b-lr6kv  jhub         4064             0
+tf-jupyter2-d7b4dc954-tn2bc   jhub         4064             0
+tf-jupyter3-747595bb8b-cdc4m  jhub         0                4064
+tf-jupyter4-6cdfdf888b-tf8wr  jhub         0                4064
+Allocated :                   16256 (99%)
+Total :                       16258
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 

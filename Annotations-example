@@ -1,0 +1,63 @@
+[root@node1 gpu-test]# k describe pod tf-jupyter-794b84bb56-zsh82
+Name:                      tf-jupyter-794b84bb56-zsh82
+Namespace:                 default
+Priority:                  0
+PriorityClassName:         <none>
+Node:                      bdworker-gpu1/10.202.115.85
+Start Time:                Wed, 13 Nov 2019 20:43:59 +0100
+Labels:                    app=tf-jupyter
+                           pod-template-hash=794b84bb56
+Annotations:               ALIYUN_COM_GPU_MEM_ASSIGNED: true
+                           ALIYUN_COM_GPU_MEM_ASSUME_TIME: 1573674239020995013
+                           ALIYUN_COM_GPU_MEM_DEV: 8129
+                           ALIYUN_COM_GPU_MEM_IDX: 0
+                           ALIYUN_COM_GPU_MEM_POD: 4000
+Status:                    Terminating (lasts <invalid>)
+Termination Grace Period:  30s
+IP:                        10.233.66.14
+Controlled By:             ReplicaSet/tf-jupyter-794b84bb56
+Containers:
+  tensorflow:
+    Container ID:   docker://cf6757dbe371ada8ed73cc6f2288720e6127624ced7eb801269a3a9dd481719d
+    Image:          tensorflow/tensorflow:1.12.0-gpu
+    Image ID:       docker-pullable://tensorflow/tensorflow@sha256:847690afb29977920dbdbcf64a8669a2aaa0a202844fe80ea5cb524ede9f0a0b
+    Port:           8888/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 13 Nov 2019 20:44:00 +0100
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      aliyun.com/gpu-mem:  4k
+    Requests:
+      aliyun.com/gpu-mem:  4k
+    Environment:           <none>
+    Mounts:
+      /usr/local/nvidia/bin from bin (rw)
+      /usr/local/nvidia/lib from lib (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-z4trp (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  bin:
+    Type:          HostPath (bare host directory volume)
+    Path:          /usr/bin
+    HostPathType:
+  lib:
+    Type:          HostPath (bare host directory volume)
+    Path:          /usr/lib
+    HostPathType:
+  default-token-z4trp:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-z4trp
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  accelerator=nvidia-tesla-m6
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+

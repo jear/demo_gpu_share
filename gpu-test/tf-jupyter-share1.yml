@@ -2,13 +2,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: tf-jupyter2
+  name: tf-jupyter1
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: tf-jupyter2
+        app: tf-jupyter1
     spec:
       nodeSelector:
         accelerator: nvidia-tesla-m6
@@ -20,7 +20,7 @@ spec:
           path: /usr/lib
         name: lib
       containers:
-      - name: tensorflow2
+      - name: tensorflow1
         image: tensorflow/tensorflow:1.12.0-gpu
         ports:
         - containerPort: 8888
@@ -37,16 +37,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tf-jupyter-service2
+  name: tf-jupyter-service1
   labels:
-    app: tf-jupyter2
+    app: tf-jupyter1
 spec:
   selector:
-    app: tf-jupyter2
+    app: tf-jupyter1
   ports:
   - port: 8888
     protocol: TCP
-    nodePort: 30062
+    nodePort: 30061
   type: LoadBalancer
 ---
 
