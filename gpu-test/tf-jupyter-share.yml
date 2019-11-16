@@ -28,6 +28,7 @@ spec:
           limits:
             # MiB
             aliyun.com/gpu-mem: 4064
+            aliyun.com/gpu-count: 1
         volumeMounts:
         - mountPath: /usr/local/nvidia/bin
           name: bin
@@ -46,7 +47,7 @@ spec:
   ports:
   - port: 8888
     protocol: TCP
-    nodePort: 30061
+    nodePort: 30060
   type: LoadBalancer
 ---
 

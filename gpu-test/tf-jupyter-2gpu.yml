@@ -2,13 +2,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: tf-jupyter1
+  name: tf-jupyter
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: tf-jupyter1
+        app: tf-jupyter
     spec:
       nodeSelector:
         accelerator: nvidia-tesla-m6
@@ -20,7 +20,7 @@ spec:
           path: /usr/lib
         name: lib
       containers:
-      - name: tensorflow1
+      - name: tensorflow
         image: tensorflow/tensorflow:1.12.0-gpu
         ports:
         - containerPort: 8888
@@ -28,7 +28,6 @@ spec:
           limits:
             # MiB
             aliyun.com/gpu-mem: 4064
-            aliyun.com/gpu-count: 1
         volumeMounts:
         - mountPath: /usr/local/nvidia/bin
           name: bin
@@ -38,16 +37,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tf-jupyter-service1
+  name: tf-jupyter-service
   labels:
-    app: tf-jupyter1
+    app: tf-jupyter
 spec:
   selector:
-    app: tf-jupyter1
+    app: tf-jupyter
   ports:
   - port: 8888
     protocol: TCP
-    nodePort: 30061
+    nodePort: 30060
   type: LoadBalancer
 ---
 
